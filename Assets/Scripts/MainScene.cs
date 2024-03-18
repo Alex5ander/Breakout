@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,11 +7,19 @@ using UnityEngine.UI;
 public class MainScene : MonoBehaviour
 {
     [SerializeField] Settings settings;
-    [SerializeField] List<Image> images;
+    [SerializeField] Image ball;
+    [SerializeField] Image paddle;
+    [SerializeField] List<Sprite> balls;
+    [SerializeField] List<Sprite> paddles;
+    int ballIndex = 0;
+    int paddleIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
-        UpdateImages();
+        ball.sprite = settings.ballSprite;
+        paddle.sprite = settings.paddleSprite;
+        ballIndex = balls.FindIndex(e => e == ball.sprite);
+        paddleIndex = paddles.FindIndex(e => e == paddle.sprite);
     }
 
     // Update is called once per frame
@@ -19,33 +28,50 @@ public class MainScene : MonoBehaviour
 
     }
 
-    public void UpdateImages()
-    {
-        foreach (Image image in images)
-        {
-            Color color = Color.white;
-            if (image.sprite != settings.paddleSprite && image.sprite != settings.ballSprite)
-            {
-                color.a = 0.5f;
-            }
-            image.color = color;
-        }
-    }
-
     public void OnPlayClick()
     {
         SceneManager.LoadScene(1);
     }
 
-    public void OnSelectPaddle(Sprite sprite)
+    public void NextBall()
     {
-        settings.paddleSprite = sprite;
-        UpdateImages();
+        ballIndex += 1;
+        if (ballIndex > balls.Count - 1)
+        {
+            ballIndex = 0;
+        }
+        ball.sprite = balls[ballIndex];
+        settings.ballSprite = ball.sprite;
+    }
+    public void PreviousBall()
+    {
+        ballIndex -= 1;
+        if (ballIndex < 0)
+        {
+            ballIndex = balls.Count - 1;
+        }
+        ball.sprite = balls[ballIndex];
+        settings.ballSprite = ball.sprite;
     }
 
-    public void OnSelectBall(Sprite sprite)
+    public void NextPaddle()
     {
-        settings.ballSprite = sprite;
-        UpdateImages();
+        paddleIndex += 1;
+        if (paddleIndex > paddles.Count - 1)
+        {
+            paddleIndex = 0;
+        }
+        paddle.sprite = paddles[paddleIndex];
+        settings.paddleSprite = paddle.sprite;
+    }
+    public void PreviousPaddle()
+    {
+        paddleIndex -= 1;
+        if (paddleIndex < 0)
+        {
+            paddleIndex = paddles.Count - 1;
+        }
+        paddle.sprite = paddles[paddleIndex];
+        settings.paddleSprite = paddle.sprite;
     }
 }

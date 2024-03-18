@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e53c85953e442904b9c9bb963cbb8f98
+guid: 64f707717378e2a48a40832d7538a338
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6757819294519696983
-    second: buttonSelected_0
+      213: -2321738274250415841
+    second: arrowSilver_right_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -122,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buttonSelected_0
+      name: arrowSilver_right_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 190
-        height: 49
+        width: 22
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75e902a08d898cd50800000000000000
-      internalID: 6757819294519696983
+      spriteID: f1120e5375787cfd0800000000000000
+      internalID: -2321738274250415841
       vertices: []
       indices: 
       edges: []
@@ -145,7 +145,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -153,7 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      buttonSelected_0: 6757819294519696983
+      arrowSilver_right_0: -2321738274250415841
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

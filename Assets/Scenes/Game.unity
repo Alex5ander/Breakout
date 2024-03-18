@@ -1811,14 +1811,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f67079d729b5c449c43c44d961cde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
+  rectangles:
+  - {fileID: 21300000, guid: 87ad2a9f2252b4a4cb470e91b4d4b624, type: 3}
+  - {fileID: 21300000, guid: ffc42b2e5683ccb499ba7d376933df06, type: 3}
+  - {fileID: 21300000, guid: 03a0e80f2189dd449a4c046018e956f1, type: 3}
+  - {fileID: 21300000, guid: 4d00312b0b52cf0479ffdb71d96977e7, type: 3}
+  - {fileID: 21300000, guid: 0a974f60aa08bae44b71e7a10af10cce, type: 3}
+  - {fileID: 21300000, guid: b3f9569e0c4b9e345b9fe3d6de11c395, type: 3}
+  squares:
   - {fileID: 21300000, guid: d7d6ee01137202e4180a675e377c3766, type: 3}
   - {fileID: 21300000, guid: 36c51b8a2b961f34480cca3f881555ff, type: 3}
   - {fileID: 21300000, guid: 77b9a7f15697d514f8b2de179ec7a5fe, type: 3}
   - {fileID: 21300000, guid: 5d026b8adc0718a43bc15eacbcb3830c, type: 3}
   - {fileID: 21300000, guid: 920d48c91db71c346addce8ed0567a1f, type: 3}
   - {fileID: 21300000, guid: b8d031079de78964aa582359ad2c3087, type: 3}
-  cols: 12
+  diamonds:
+  - {fileID: 21300000, guid: 690a874fcb58bd447a62fbf2fdc99dba, type: 3}
+  - {fileID: 21300000, guid: ed1bc196e1cf9c441b1f9958366ff308, type: 3}
+  - {fileID: 21300000, guid: 7a892464b6774794792d3e9241d388a8, type: 3}
+  - {fileID: 21300000, guid: 10fd9065bfebe0748a9da279f037be1e, type: 3}
+  - {fileID: 21300000, guid: 337cbab30e1ee0e4dab9b4c409c045e4, type: 3}
+  - {fileID: 21300000, guid: 0beca0914f2cbeb4ea4f8385138d20d0, type: 3}
+  polygons:
+  - {fileID: 21300000, guid: 11ce4debc96e9b34c8d6721fd0ef23c7, type: 3}
+  - {fileID: 21300000, guid: ef139552dda8a9f429a2c5f126834a7b, type: 3}
+  - {fileID: 21300000, guid: 928467a85e734a2469607c91545c67a1, type: 3}
+  - {fileID: 21300000, guid: 1f98f5eb4ec5311428af21a9e807bc04, type: 3}
+  - {fileID: 21300000, guid: 7649c48b06c73604bb715f4a2338862f, type: 3}
+  - {fileID: 21300000, guid: 4e50ae2fe9d4ab44ea77e57dfa37e60c, type: 3}
+  cols: 6
   rows: 6
 --- !u!1 &1215820489
 GameObject:
@@ -2016,7 +2037,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 47cdd78331da61843a152742efd7320b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2083,8 +2104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 2031420911}
-  impactBrickAudio: {fileID: 8300000, guid: 545f56b16ec51d7499641fdcac6ff5ed, type: 3}
-  impactPaddleAudio: {fileID: 8300000, guid: 0ac6923242fc1894a993fac274dcbbab, type: 3}
+  impactBrickAudio: {fileID: 8300000, guid: 0ac6923242fc1894a993fac274dcbbab, type: 3}
+  impactPaddleAudio: {fileID: 8300000, guid: 545f56b16ec51d7499641fdcac6ff5ed, type: 3}
   gameOver: {fileID: 1215820493}
   body: {fileID: 1357058451}
   particles: {fileID: 2237356523770847194, guid: 6c44e95e5678f3b4194851e292adb86f, type: 3}

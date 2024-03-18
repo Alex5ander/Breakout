@@ -38,16 +38,17 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.parent != null)
+        if (transform.parent != null && Input.anyKeyDown)
         {
             transform.SetParent(null);
             body.velocity = new(new float[] { -Speed, Speed }[Random.Range(0, 2)], Speed);
         }
     }
-
+    Vector2 lastVelocity;
     void FixedUpdate()
     {
-        if (body.position.y < paddleTransform.position.y - 0.25f && transform.parent == null)
+        lastVelocity = body.velocity;
+        if (body.position.y < paddleTransform.position.y - 0.5f && transform.parent == null)
         {
             if (life == 0)
             {
@@ -84,13 +85,10 @@ public class Ball : MonoBehaviour
         {
             audioSource.PlayOneShot(impactBrickAudio);
         }
-        if (body.velocity.x == 0 || body.velocity.y == 0)
-        {
-            Vector2 copy = body.velocity;
-            copy.x = copy.x == 0 ? Mathf.Sign(collision2D.transform.position.x - transform.position.x) : copy.x;
-            copy.y = copy.y == 0 ? Mathf.Sign(collision2D.transform.position.y - transform.position.y) : copy.y;
-            body.velocity = copy;
-        }
+        float magnitude = lastVelocity.magnitude;
+        Vector2 direction = Vector3.Reflect(lastVelocity.normalized, collision2D.contacts[0].normal);
+        body.velocity = direction * magnitude;
+        lastVelocity = body.velocity;
     }
 
     void AddScore()

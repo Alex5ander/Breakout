@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e53c85953e442904b9c9bb963cbb8f98
+guid: ed1bc196e1cf9c441b1f9958366ff308
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6757819294519696983
-    second: buttonSelected_0
+      213: -937789935770642536
+    second: element_red_diamond_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -122,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buttonSelected_0
+      name: element_red_diamond_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 190
-        height: 49
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75e902a08d898cd50800000000000000
-      internalID: 6757819294519696983
+      spriteID: 8975474a50d4cf2f0800000000000000
+      internalID: -937789935770642536
       vertices: []
       indices: 
       edges: []
@@ -153,7 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      buttonSelected_0: 6757819294519696983
+      element_red_diamond_0: -937789935770642536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
