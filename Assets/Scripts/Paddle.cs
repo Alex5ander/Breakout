@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-    [SerializeField] Settings settings;
     [SerializeField] float Speed;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = settings.paddleSprite;
+        GetComponent<SpriteRenderer>().sprite = GameManager.Instance.paddleSprite;
     }
 
     // Update is called once per frame

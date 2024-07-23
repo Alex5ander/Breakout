@@ -1,12 +1,10 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainScene : MonoBehaviour
 {
-    [SerializeField] Settings settings;
     [SerializeField] Image ball;
     [SerializeField] Image paddle;
     [SerializeField] List<Sprite> balls;
@@ -16,8 +14,8 @@ public class MainScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ball.sprite = settings.ballSprite;
-        paddle.sprite = settings.paddleSprite;
+        ball.sprite = GameManager.Instance.ballSprite;
+        paddle.sprite = GameManager.Instance.paddleSprite;
         ballIndex = balls.FindIndex(e => e == ball.sprite);
         paddleIndex = paddles.FindIndex(e => e == paddle.sprite);
     }
@@ -41,7 +39,7 @@ public class MainScene : MonoBehaviour
             ballIndex = 0;
         }
         ball.sprite = balls[ballIndex];
-        settings.ballSprite = ball.sprite;
+        GameManager.Instance.ballSprite = ball.sprite;
     }
     public void PreviousBall()
     {
@@ -51,7 +49,7 @@ public class MainScene : MonoBehaviour
             ballIndex = balls.Count - 1;
         }
         ball.sprite = balls[ballIndex];
-        settings.ballSprite = ball.sprite;
+        GameManager.Instance.ballSprite = ball.sprite;
     }
 
     public void NextPaddle()
@@ -62,7 +60,7 @@ public class MainScene : MonoBehaviour
             paddleIndex = 0;
         }
         paddle.sprite = paddles[paddleIndex];
-        settings.paddleSprite = paddle.sprite;
+        GameManager.Instance.paddleSprite = paddle.sprite;
     }
     public void PreviousPaddle()
     {
@@ -72,6 +70,6 @@ public class MainScene : MonoBehaviour
             paddleIndex = paddles.Count - 1;
         }
         paddle.sprite = paddles[paddleIndex];
-        settings.paddleSprite = paddle.sprite;
+        GameManager.Instance.paddleSprite = paddle.sprite;
     }
 }

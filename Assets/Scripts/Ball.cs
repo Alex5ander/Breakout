@@ -14,7 +14,6 @@ public class Ball : MonoBehaviour
     [SerializeField] Rigidbody2D body;
     [SerializeField] ParticleSystem particles;
     [SerializeField] Transform paddleTransform;
-    [SerializeField] Settings settings;
     [Header("UI")]
     [SerializeField] TextMeshProUGUI ScoreTextUI;
     [SerializeField] List<Image> lifeImages;
@@ -26,12 +25,12 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = settings.ballSprite;
+        GetComponent<SpriteRenderer>().sprite = GameManager.Instance.ballSprite;
         ballInitialPosition = transform.localPosition;
         paddleInitialPosition = paddleTransform.position;
         foreach (Image image in lifeImages)
         {
-            image.sprite = settings.ballSprite;
+            image.sprite = GameManager.Instance.ballSprite;
         }
     }
 
@@ -41,13 +40,13 @@ public class Ball : MonoBehaviour
         if (transform.parent != null && Input.anyKeyDown)
         {
             transform.SetParent(null);
-            body.velocity = new(new float[] { -Speed, Speed }[Random.Range(0, 2)], Speed);
+            body.linearVelocity = new(new float[] { -Speed, Speed }[Random.Range(0, 2)], Speed);
         }
     }
     Vector2 lastVelocity;
     void FixedUpdate()
     {
-        lastVelocity = body.velocity;
+        lastVelocity = body.linearVelocity;
         if (body.position.y < paddleTransform.position.y - 0.5f && transform.parent == null)
         {
             if (life == 0)
@@ -61,7 +60,7 @@ public class Ball : MonoBehaviour
                 lifeImages[life].gameObject.SetActive(false);
                 transform.position = ballInitialPosition;
                 transform.SetParent(paddleTransform, false);
-                body.velocity = Vector2.zero;
+                body.linearVelocity = Vector2.zero;
                 paddleTransform.position = paddleInitialPosition;
             }
         }
@@ -87,8 +86,8 @@ public class Ball : MonoBehaviour
         }
         float magnitude = lastVelocity.magnitude;
         Vector2 direction = Vector3.Reflect(lastVelocity.normalized, collision2D.contacts[0].normal);
-        body.velocity = direction * magnitude;
-        lastVelocity = body.velocity;
+        body.linearVelocity = direction * magnitude;
+        lastVelocity = body.linearVelocity;
     }
 
     void AddScore()
